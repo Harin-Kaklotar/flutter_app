@@ -11,10 +11,9 @@ class MyApp extends StatelessWidget {
       title: "My app",
       home: new HomePage(),
       theme: new ThemeData(
-        primarySwatch: Colors.green,
-        accentColor: Colors.red,
-        brightness: Brightness.light
-      ),
+          primarySwatch: Colors.green,
+          accentColor: Colors.red,
+          brightness: Brightness.light),
     );
   }
 }
@@ -34,6 +33,10 @@ class _HomePageState extends State<HomePage> {
         title: new Text("Home page"),
       ),
       body: _bodyWidget(),
+      floatingActionButton: new FloatingActionButton(
+        child: new Icon(Icons.add),
+        onPressed: _changeText,
+      ),
     );
   }
 
@@ -44,14 +47,9 @@ class _HomePageState extends State<HomePage> {
         child: new Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            new Text(myText, style: new TextStyle(fontSize: 22.0),),
-            new RaisedButton(
-              child: new Text(
-                "Click",
-                style: new TextStyle(color: Colors.white),
-              ),
-              onPressed: _changeText,
-              color: Colors.red,
+            new Text(
+              myText,
+              style: new TextStyle(fontSize: 22.0),
             )
           ],
         ),
