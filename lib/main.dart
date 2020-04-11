@@ -20,7 +20,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   String myText = "Hello world";
 
   @override
@@ -38,11 +37,16 @@ class _HomePageState extends State<HomePage> {
       padding: const EdgeInsets.all(8.0),
       child: new Center(
         child: new Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            new Text(myText),
+            new Text(myText, style: new TextStyle(fontSize: 22.0),),
             new RaisedButton(
-              child: new Text("Click"),
+              child: new Text(
+                "Click",
+                style: new TextStyle(color: Colors.white),
+              ),
               onPressed: _changeText,
+              color: Colors.red,
             )
           ],
         ),
@@ -52,9 +56,9 @@ class _HomePageState extends State<HomePage> {
 
   void _changeText() {
     setState(() {
-      if(myText.startsWith("H")){
+      if (myText.startsWith("H")) {
         myText = "Welcome to flutter";
-      }else{
+      } else {
         myText = "Hello world";
       }
     });
